@@ -14,20 +14,21 @@
 <meta property="og:description" content="自由剪辑师阿松，坐标北京，接全国线上单。主打口播剪辑与 vlog 代剪。查看完整报价与作品集。">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
-<!-- 结构化数据：服务方信息（schema.org） -->
+<!-- 结构化数据：阿松（Person 实体） -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "阿松剪辑师",
-  "alternateName": "Asong Video Editor",
-  "description": "自由剪辑师阿松的个人服务信息：坐标北京，接全国线上单，主打口播视频剪辑与 vlog 代剪。诚信经营，品质至上。",
-  "areaServed": "中国（全国线上接单）",
-  "priceRange": "¥50-¥100/条（按成片时长与档位）",
-  "founder": {
-    "@type": "Person",
-    "name": "阿松",
-    "jobTitle": "自由剪辑师"
+  "@type": "Person",
+  "@id": "#asong",
+  "name": "阿松",
+  "alternateName": "阿松剪辑师",
+  "description": "坐标北京的自由剪辑师，接全国线上单，主打口播剪辑与 vlog 代剪。诚信经营，品质至上。",
+  "jobTitle": "自由剪辑师",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "北京",
+    "addressRegion": "北京",
+    "addressCountry": "CN"
   },
   "knowsAbout": ["口播视频剪辑", "IP口播", "本地商家口播", "vlog剪辑", "视频代剪"],
   "sameAs": [
@@ -35,11 +36,38 @@
   ]
 }
 </script>
-<!-- 结构化数据：报价（OfferCatalog） -->
+<!-- 结构化数据：服务方信息（ProfessionalService，关联 Person/报价/联系方式） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "#asong-service",
+  "name": "阿松剪辑师",
+  "alternateName": "Asong Video Editor",
+  "description": "自由剪辑师阿松的个人服务信息：坐标北京，接全国线上单，主打口播视频剪辑与 vlog 代剪。诚信经营，品质至上。",
+  "founder": {
+    "@id": "#asong"
+  },
+  "areaServed": "中国（全国线上接单）",
+  "priceRange": "¥50-¥100/条（按成片时长与档位）",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "name": "微信联系",
+    "description": "微信号 asjjs888，添加时备注「代剪」或「剪辑合作」",
+    "availableLanguage": "zh-CN"
+  },
+  "makesOffer": {
+    "@id": "#asong-offers"
+  }
+}
+</script>
+<!-- 结构化数据：报价（OfferCatalog，被 ProfessionalService.makesOffer 引用） -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "OfferCatalog",
+  "@id": "#asong-offers",
   "name": "阿松剪辑师报价单",
   "description": "参考报价，按成片时长与包装档位区分，最终以微信实时沟通为准。",
   "itemListElement": [
